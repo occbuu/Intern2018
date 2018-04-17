@@ -9,6 +9,7 @@
 .settings
 .springBeans
 .sts4-cache
+temp
 
 ### IntelliJ IDEA ###
 .idea
@@ -20,6 +21,6 @@
 /nbproject/private/
 /build/
 /nbbuild/
-/temp//dist/
+/dist/
 /nbdist/
 /.nb-gradle/
