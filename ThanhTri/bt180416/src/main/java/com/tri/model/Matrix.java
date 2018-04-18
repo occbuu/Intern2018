@@ -1,4 +1,4 @@
-package model;
+package com.tri.model;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -10,7 +10,7 @@ public class Matrix {
 	private int r;
 	private int[][] data;
 
-	public String getData() {
+	public String getDataForString() {
 		StringBuilder str = new StringBuilder();
 		for (int i = 0; i < r; i++) {
 			for (int j = 0; j < c; j++) {
@@ -25,10 +25,15 @@ public class Matrix {
 		}
 		return str.toString();
 	}
+	
+	
 
-	public void setData(String data) {
+	public int[][] getData() {
+		return data;
+	}
+
+	public void setData() {
 		this.data = new int[this.getC()][this.getR()];
-
 	}
 
 	public int getC() {
@@ -59,6 +64,15 @@ public class Matrix {
 			}
 		}
 	}
+	
+	public void getInit(Random ran) {
+		data = new int[r][c];
+		for (int i = 0; i < r; i++) {
+			for (int j = 0; j < c; j++) {
+				data[i][j] = ran.nextInt(100);
+			}
+		}
+	}
 
 	public String save() {
 		String rs = "Success";
@@ -66,7 +80,7 @@ public class Matrix {
 		try (BufferedWriter bw = new BufferedWriter(new FileWriter("bt180416.txt"))) {
 			StringBuilder str = new StringBuilder();
 			str.append(this.getC() + "x" + this.getR() + "\r\n");
-			str.append(this.getData());
+			str.append(this.getDataForString());
 			bw.write(str.toString());
 		} catch (IOException e) {
 			e.printStackTrace();
