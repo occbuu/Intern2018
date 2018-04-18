@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col-lg-5">
+        <input type="number" class="form-control" min="1" [(ngModel)]="vm.c" placeholder="Col" />
+    </div>
+    <div class="col-lg-5">
+        <input type="number" class="form-control" min="1" [(ngModel)]="vm.r" placeholder="Row" />
+    </div>
+    <div class="col-lg-2">
+        <button type="button" class="btn btn-primary" (click)="create()">Create</button>
+    </div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-lg-5">
+        <button type="button" class="btn btn-primary" (click)="save()">Save</button></div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-lg-5">
+        <input type="file" (change)="selectFile($event)" accept=".txt" /></div>
+</div>
+<hr/>
+<div class="row">
+    <div class="col-lg-12">
+        <textarea class="form-control" readonly="true" rows="4" cols="50">{{fileText}}</textarea></div>
+</div>
