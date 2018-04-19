@@ -29,7 +29,7 @@ public class MyController {
 		mat.getInit(ran);
 		// mat = new Matrix(c, r, ran);
 		res.setStatus("Success");
-		res.setResult(mat.getData());
+		res.setResult(mat.getDataForString());
 		return new ResponseEntity<>(res, HttpStatus.OK);
 	}
 
