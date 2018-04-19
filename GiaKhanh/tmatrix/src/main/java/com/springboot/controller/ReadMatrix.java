@@ -1,4 +1,4 @@
-package com.boraji.tutorial.springboot.controller;
+package com.springboot.controller;
 
 import java.io.File;
 import java.io.FileInputStream;

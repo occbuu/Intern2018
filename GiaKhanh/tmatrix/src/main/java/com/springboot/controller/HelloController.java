@@ -1,4 +1,4 @@
-package com.boraji.tutorial.springboot.controller;
+package com.springboot.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,7 +33,7 @@ public class HelloController {
       model.addAttribute("path_2", path_2);
       
       MyMatrix k = new MyMatrix (m,n,path);
-      k.CreateAndSave();
+      k.createAndSave();
       ReadMatrix l = new ReadMatrix(path_2); 
       model.addAttribute("show", l.Show());
 

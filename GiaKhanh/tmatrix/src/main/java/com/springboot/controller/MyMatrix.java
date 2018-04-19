@@ -1,4 +1,4 @@
-package com.boraji.tutorial.springboot.controller;
+package com.springboot.controller;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -20,37 +20,37 @@ public class MyMatrix {
 		this.path = path;
 		}
 	}
-	public int GetM()
+	public int getM()
 	{
 		return x;
 	}
 	
-	public void SetM(int m)
+	public void setM(int m)
 	{
 		x = m;
 	}
 	
-	public void SetN(int n)
+	public void setN(int n)
 	{
 		y = n;
 	}
 	
-	public int GetN()
+	public int getN()
 	{
 		return y;
 	}
 	
-	public void SetPath(String path)
+	public void setPath(String path)
 	{
 		this.path = path;
 	}
 	
-	public String GetPath()
+	public String getPath()
 	{
 		return path;
 	}
 	
-	public void CreateAndSave() throws IOException
+	public void createAndSave() throws IOException
 	{
 	File file = new File(path);
 	Writer output = new BufferedWriter(new FileWriter(file));
