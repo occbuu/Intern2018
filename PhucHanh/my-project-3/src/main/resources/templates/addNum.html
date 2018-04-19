@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+   <head>
+      <meta charset="UTF-8" />
+      <title>Add Number</title>
+      <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+   </head>
+   <body>
+       <form action="aabb/createMatrix" method="POST">
+       	<input type="number" name="a" placeholder="Column" />
+       	<input type="number" name="b" placeholder="Row" />
+       	<input type="text" name="path" placeholder="Path file" />
+       	<input type="text" name="path2" placeholder="Read path file" />
+       	<input type="submit" value="complete" />
+       </form>
+   </body>
+</html>
