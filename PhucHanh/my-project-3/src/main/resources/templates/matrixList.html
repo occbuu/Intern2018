@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Matrix List</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}" />
+</head>
+<body>
+	<h1>Matrix List</h1>
+	<a href="http://localhost:8080">Add Number</a>
+	<br />
+	<br />
+	<div>
+		<h2>Matrix create</h2>
+		<span th:utext="${matrix}"></span>
+	</div>
+	<div>
+		<h2>Matrix from file</h2>
+		<span th:utext="${matrix2}"></span>
+	</div>
+</body>
+</html>
