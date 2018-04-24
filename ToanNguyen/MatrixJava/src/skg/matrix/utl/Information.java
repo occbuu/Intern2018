@@ -3,7 +3,7 @@ package skg.matrix.utl;
 public abstract class Information {
 	// region -- Fields --
 
-	private String name;
+	protected String name;
 
 	// end
 
@@ -22,4 +22,7 @@ public abstract class Information {
 	// region -- Methods --
 
 	// end
+
+	public abstract void Test();
+
 }

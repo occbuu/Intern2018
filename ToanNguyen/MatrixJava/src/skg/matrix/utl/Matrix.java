@@ -10,7 +10,7 @@ public class Matrix extends Information implements FileHelper {
 
 	private int data[][];
 
-	private int m;
+	public int m;
 
 	private int n;
 
@@ -30,15 +30,22 @@ public class Matrix extends Information implements FileHelper {
 		return m;
 	}
 
-	public void setM(int m) {
-		if (m < 0) {
-			m = 0;
-		}
-		if (m > 10) {
-			m = 10;
+	/**
+	 * Lim
+	 * 
+	 * @param m
+	 * @throws Exception
+	 */
+	public void setM(int m) throws Exception {
+
+		if (0 < m && m < 10) {
+			throw new Exception("Over...");
+		} else if (11 < m && m < 20) {
+			throw new Exception("101");
+		} else {
+			this.m = m;
 		}
 
-		this.m = m;
 	}
 
 	public int getN() {
@@ -275,6 +282,16 @@ public class Matrix extends Information implements FileHelper {
 				}
 			}
 		}
+	}
+
+	public void Test1() {
+		System.out.println("I am Matrix" + getName());
+	}
+
+	@Override
+	public void Test() {
+		// TODO Auto-generated method stub
+
 	}
 
 	// end
