@@ -1,4 +1,4 @@
-package com.intern.giang.oop;
+package com.matrix.oop;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

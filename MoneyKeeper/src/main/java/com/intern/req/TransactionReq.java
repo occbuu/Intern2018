@@ -24,10 +24,24 @@ public class TransactionReq {
 	private String note;
 	@JsonProperty("person")
 	private String person;
+	@JsonProperty("status")
+	private String status;
 
 	// end
 
 	// region -- Get set --
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		if (status == null || status.isEmpty()) {
+			this.status = "actice";
+		} else {
+			this.status = status;
+		}
+	}
 
 	public Date getDateTransaction() {
 		return dateTransaction;

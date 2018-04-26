@@ -22,17 +22,17 @@ public class Account implements Serializable {
 	private int id;
 	@Column(name = "owner", updatable = false, nullable = false)
 	private String owner;
-	@Column(name = "account_type", insertable = false, updatable = false, nullable = false)
+	@Column(name = "account_type", nullable = true)
 	private String accountType;
-	@Column(name = "name", insertable = false, updatable = false, nullable = false)
+	@Column(name = "name", nullable = true)
 	private String name;
-	@Column(name = "ini", insertable = false, updatable = false, nullable = false)
+	@Column(name = "ini", updatable = false, nullable = true)
 	private double ini;
-	@Column(name = "rmn", insertable = false, updatable = false, nullable = false)
+	@Column(name = "rmn", nullable = true)
 	private double rmn;
-	@Column(name = "note", insertable = false, updatable = false, nullable = false)
+	@Column(name = "note", nullable = true)
 	private String note;
-	@Column(name = "status", insertable = false, updatable = false, nullable = false)
+	@Column(name = "status", insertable = false, nullable = false)
 	private String status;
 
 	// end
@@ -108,7 +108,7 @@ public class Account implements Serializable {
 	// region -- Methods --
 
 	public Account(int id, String owner, String name, double ini, double rmn, String note, String status,
-			String account_type) {
+			String accountType) {
 		this.owner = owner;
 		this.id = id;
 		this.name = name;
