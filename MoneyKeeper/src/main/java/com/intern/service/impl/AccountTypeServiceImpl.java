@@ -29,8 +29,8 @@ public class AccountTypeServiceImpl implements AccountTypeService {
 	}
 
 	@Override
-	public List<AccountType> findAccountType() {
-		return dao.getAccountTypeLikeName("");
+	public AccountType findAccountTypeById(int id) {
+		return dao.getAccountTypeById(id);
 	}
 
 	// end

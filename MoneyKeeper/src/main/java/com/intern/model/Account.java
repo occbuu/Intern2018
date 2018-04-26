@@ -5,6 +5,9 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -13,8 +16,14 @@ public class Account implements Serializable {
 
 	// region -- Fields --
 
-	@EmbeddedId
-	private AccountIdentity accountIdentity;
+	@Id
+	@Column(name = "id", insertable = false, updatable = false, nullable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	@Column(name = "owner", updatable = false, nullable = false)
+	private String owner;
+	@Column(name = "account_type", insertable = false, updatable = false, nullable = false)
+	private String accountType;
 	@Column(name = "name", insertable = false, updatable = false, nullable = false)
 	private String name;
 	@Column(name = "ini", insertable = false, updatable = false, nullable = false)
@@ -30,16 +39,24 @@ public class Account implements Serializable {
 
 	// region -- Get set --
 
-	public AccountIdentity getAccountIdentity() {
-		return accountIdentity;
-	}
-
-	public void setAccountIdentity(AccountIdentity accountIdentity) {
-		this.accountIdentity = accountIdentity;
-	}
-
 	public String getName() {
 		return name;
+	}
+
+	public synchronized int getId() {
+		return id;
+	}
+
+	public synchronized void setId(int id) {
+		this.id = id;
+	}
+
+	public synchronized String getOwner() {
+		return owner;
+	}
+
+	public synchronized void setOwner(String owner) {
+		this.owner = owner;
 	}
 
 	public void setName(String name) {
@@ -74,26 +91,28 @@ public class Account implements Serializable {
 		return status;
 	}
 
-	// end
+	public String getAccountType() {
+		return accountType;
+	}
 
-	// region -- Methods --
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
 
 	public void setStatus(String status) {
 		this.status = status;
 	}
 
-	public Account(AccountIdentity accountIdentity, String name, double ini, double rmn, String note, String status) {
-		this.accountIdentity = accountIdentity;
-		this.name = name;
-		this.ini = ini;
-		this.rmn = rmn;
-		this.note = note;
-		this.status = status;
-	}
+	// end
 
-	public Account(String owner, String typeId, String name, double ini, double rmn, String note, String status) {
-		this.accountIdentity = new AccountIdentity(owner, typeId);
+	// region -- Methods --
+
+	public Account(int id, String owner, String name, double ini, double rmn, String note, String status,
+			String account_type) {
+		this.owner = owner;
+		this.id = id;
 		this.name = name;
+		this.accountType = accountType;
 		this.ini = ini;
 		this.rmn = rmn;
 		this.note = note;

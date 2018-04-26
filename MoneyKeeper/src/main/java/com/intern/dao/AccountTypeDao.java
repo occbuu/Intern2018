@@ -10,8 +10,11 @@ import org.springframework.stereotype.Repository;
 import com.intern.model.AccountType;
 
 @Repository
-public interface AccountTypeDao extends JpaRepository<AccountType, String> {
-	@Query(nativeQuery = true, value = "SELECT * FROM expend_type a WHERE a.name LIKE CONCAT('%', :name, '%')"
-			+ " AND a.status = 'active'")
+public interface AccountTypeDao extends JpaRepository<AccountType, Integer> {
+	@Query(nativeQuery = true, value = "SELECT * FROM account_type a WHERE"
+			+ " UPPER(a.name) LIKE UPPER(CONCAT('%', :name, '%'))")
 	public List<AccountType> getAccountTypeLikeName(@Param("name") String name);
+
+	@Query(nativeQuery = true, value = "SELECT * FROM account_type WHERE a.id = :id")
+	public AccountType getAccountTypeById(@Param("id") int id);
 }

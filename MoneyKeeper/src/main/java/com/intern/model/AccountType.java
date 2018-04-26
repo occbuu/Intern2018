@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -15,23 +17,20 @@ public class AccountType implements Serializable {
 
 	@Id
 	@Column(name = "id", insertable = false, updatable = false, nullable = false)
-	private String id;
-	@Column(name = "name", insertable = false, updatable = false, nullable = false)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+	@Column(name = "name", nullable = true)
 	private String name;
-	@Column(name = "note", insertable = false, updatable = false, nullable = false)
-	private String note;
-	@Column(name = "status", insertable = false, updatable = false, nullable = false)
-	private String status;
 
 	// end
 
 	// region -- Get set --
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -43,32 +42,14 @@ public class AccountType implements Serializable {
 		this.name = name;
 	}
 
-	public String getNote() {
-		return note;
-	}
-
-	public void setNote(String note) {
-		this.note = note;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
 	// end
 
 	// region -- Methods --
 
-	public AccountType(String id, String name, String note, String status) {
+	public AccountType(int id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
-		this.note = note;
-		this.status = status;
 	}
 
 	public AccountType() {

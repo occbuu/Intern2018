@@ -1,30 +1,26 @@
 package com.intern.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "transaction_type", schema = "public")
-public class TransactionType implements Serializable {
-
+public abstract class TransactionType {
+	
 	// region -- Fields --
-
+	
 	@Id
 	@Column(name = "id", updatable = false, nullable = false)
-	private String id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	@Column(name = "name", nullable = true)
 	private String name;
 	@Column(name = "note", nullable = true)
 	private String note;
-	@Column(name = "type", nullable = true)
-	private String type;
 	@Column(name = "id_parent", nullable = true)
-	private String idParent;
+	private int idParent;
 	@Column(name = "owner", nullable = true)
 	private String owner;
 	@Column(name = "create_date", insertable = false, nullable = true)
@@ -36,6 +32,10 @@ public class TransactionType implements Serializable {
 
 	// region -- Get set --
 
+	public int getId() {
+		return id;
+	}
+
 	public Date getCreateDate() {
 		return createDate;
 	}
@@ -44,11 +44,7 @@ public class TransactionType implements Serializable {
 		this.createDate = createDate;
 	}
 
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -68,19 +64,11 @@ public class TransactionType implements Serializable {
 		this.note = note;
 	}
 
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-	public String getIdParent() {
+	public int getIdParent() {
 		return idParent;
 	}
 
-	public void setIdParent(String idParent) {
+	public void setIdParent(int idParent) {
 		this.idParent = idParent;
 	}
 
@@ -101,24 +89,5 @@ public class TransactionType implements Serializable {
 	}
 
 	// end
-
-	// region -- Methods --
-
-	public TransactionType(String id, String name, String note, String type, String idParent, String owner,
-			String status) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.note = note;
-		this.type = type;
-		this.idParent = idParent;
-		this.owner = owner;
-		this.status = status;
-	}
-
-	public TransactionType() {
-		super();
-	}
-
-	// end
+	
 }
