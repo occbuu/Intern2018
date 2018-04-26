@@ -16,10 +16,24 @@ public class TransactionTypeReq {
 	private int idParent;
 	@JsonProperty("owner")
 	private String owner;
+	@JsonProperty("status")
+	private String status;
 
 	// end
 
 	// region -- Get set --
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		if (status == null || status.isEmpty()) {
+			this.status = "actice";
+		} else {
+			this.status = status;
+		}
+	}
 
 	public String getName() {
 		return name;

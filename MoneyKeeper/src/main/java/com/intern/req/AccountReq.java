@@ -18,6 +18,8 @@ public class AccountReq {
 	private double rmn;
 	@JsonProperty("note")
 	private String note;
+	@JsonProperty("status")
+	private String status;
 
 	// end
 
@@ -25,6 +27,18 @@ public class AccountReq {
 
 	public String getOwner() {
 		return owner;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		if (status == null || status.isEmpty()) {
+			this.status = "actice";
+		} else {
+			this.status = status;
+		}
 	}
 
 	public void setOwner(String owner) {

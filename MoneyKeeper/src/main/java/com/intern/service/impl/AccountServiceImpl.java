@@ -60,5 +60,10 @@ public class AccountServiceImpl implements AccountService {
 		return null;
 	}
 
+	@Override
+	public Account findAccountById(int id) {
+		return dao.getAccountById(id);
+	}
+
 	// end
 }
