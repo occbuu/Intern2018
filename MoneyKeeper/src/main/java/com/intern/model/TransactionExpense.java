@@ -90,7 +90,11 @@ public class TransactionExpense implements Serializable {
 	}
 
 	public void setStatus(String status) {
-		this.status = status;
+		if (status == null || status.isEmpty()) {
+			this.status = "active";
+		} else {
+			this.status = status;
+		}
 	}
 
 	// end

@@ -28,11 +28,7 @@ public class UserAccountReq {
 	}
 
 	public void setStatus(String status) {
-		if (status == null || status.isEmpty()) {
-			this.status = "actice";
-		} else {
-			this.status = status;
-		}
+		this.status = status;
 	}
 
 	public String getUserName() {

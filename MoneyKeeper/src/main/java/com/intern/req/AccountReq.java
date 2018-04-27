@@ -34,11 +34,7 @@ public class AccountReq {
 	}
 
 	public void setStatus(String status) {
-		if (status == null || status.isEmpty()) {
-			this.status = "actice";
-		} else {
-			this.status = status;
-		}
+		this.status = status;
 	}
 
 	public void setOwner(String owner) {

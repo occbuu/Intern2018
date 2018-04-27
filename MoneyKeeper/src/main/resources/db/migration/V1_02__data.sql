@@ -1,14 +1,18 @@
+/*
 INSERT INTO PUBLIC."user_account" ("user_name", "password", "full_name", "email", "telephone") VALUES
 ('111','111','111','111@111.111','111'),
 ('222','222','222','222@222.222','222');
+*/
 
 INSERT INTO PUBLIC."account_type"("name") VALUES
 ('Cash'), ('Bank account'), ('ATM'), ('Deposit account'), ('Save account'), ('Other');
 
+/*
 INSERT INTO PUBLIC."account" ("owner", "account_type", "name", "ini", "rmn", "note") VALUES
 ('111', 'ACC1', 'Wallet', 500000, 500000, 'Current money in wallet'),
 ('111', 'ACC2', 'Bank account', 3250000, 3250000, 'Total money in bank account'),
 ('111', 'ACC3', 'Deposit account', 0, 0, '');
+*/
 
 INSERT INTO PUBLIC."transaction_expense" ("name", "note", "id_parent", "owner") VALUES
 ('Lend', '', 0, NULL),

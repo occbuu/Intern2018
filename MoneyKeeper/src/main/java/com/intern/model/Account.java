@@ -43,19 +43,19 @@ public class Account implements Serializable {
 		return name;
 	}
 
-	public synchronized int getId() {
+	public int getId() {
 		return id;
 	}
 
-	public synchronized void setId(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
-	public synchronized String getOwner() {
+	public String getOwner() {
 		return owner;
 	}
 
-	public synchronized void setOwner(String owner) {
+	public void setOwner(String owner) {
 		this.owner = owner;
 	}
 
@@ -100,7 +100,11 @@ public class Account implements Serializable {
 	}
 
 	public void setStatus(String status) {
-		this.status = status;
+		if (status == null || status.isEmpty()) {
+			this.status = "active";
+		} else {
+			this.status = status;
+		}
 	}
 
 	// end

@@ -40,7 +40,11 @@ public class Transaction implements Serializable {
 	}
 
 	public void setStatus(String status) {
-		this.status = status;
+		if (status == null || status.isEmpty()) {
+			this.status = "active";
+		} else {
+			this.status = status;
+		}
 	}
 
 	public String getAccountType() {
