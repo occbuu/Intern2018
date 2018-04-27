@@ -10,7 +10,9 @@ public class Matrix {
 	// region -- Fields --
 
 	private int m = 1, n = 1;
+
 	private int a[][];
+
 	private String path = "E:\\matrixfle.txt";
 
 	// end
@@ -45,7 +47,7 @@ public class Matrix {
 	}
 
 	/**
-	 * input rows and columns
+	 * Input rows and columns
 	 * 
 	 * @param m
 	 * @param n
@@ -54,35 +56,41 @@ public class Matrix {
 		this.m = m;
 		this.n = n;
 		this.a = new int[m][n];
+
 		for (int i = 0; i < m; i++) {
 			for (int j = 0; j < n; j++) {
 				int random = (int) (Math.random() * 100 + 1);
 				a[i][j] = random;
+
 				System.out.print(a[i][j] + "  ");
 			}
+
 			System.out.println("");
 		}
 	}
 
 	/**
-	 * save matrix to file
+	 * Save matrix to file
 	 * 
 	 * @throws Exception
 	 */
 	public void saveMatrix() throws Exception {
 		File file = new File(path);
 		Writer output = new BufferedWriter(new FileWriter(file));
+
 		for (int i = 0; i < m; i++) {
 			for (int j = 0; j < n; j++) {
 				output.write(a[i][j] + " ");
 			}
+
 			output.write("\r\n");
 		}
+
 		output.close();
 	}
 
 	/**
-	 * read matrix from file
+	 * Read matrix from file
 	 * 
 	 * @param path
 	 * @throws Exception
@@ -90,6 +98,7 @@ public class Matrix {
 	public void readMatrix(String path) throws Exception {
 		FileReader fr = new FileReader(path);
 		int i;
+
 		while ((i = fr.read()) != -1) {
 			System.out.print((char) i);
 		}

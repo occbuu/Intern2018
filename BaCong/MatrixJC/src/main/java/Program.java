@@ -15,10 +15,8 @@ public class Program {
 		k = sc.nextInt();
 		System.out.println("Columns: ");
 		f = sc.nextInt();
-		
 		System.out.println("Matrix");
 		Matrix c = new Matrix(k, f);
-		
 		c.saveMatrix();
 
 		System.out.println("");
