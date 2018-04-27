@@ -1,6 +1,5 @@
 package com.intern.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -12,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "transaction_expense", schema = "public")
-public class TransactionExpense implements Serializable {
+public class TransactionExpense {
 
 	// region -- Fields --
 

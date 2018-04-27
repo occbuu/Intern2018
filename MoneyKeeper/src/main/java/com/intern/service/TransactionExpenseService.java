@@ -2,7 +2,7 @@ package com.intern.service;
 
 import java.util.List;
 
-import com.intern.model.*;
+import com.intern.model.TransactionExpense;
 
 public interface TransactionExpenseService {
 

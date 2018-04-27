@@ -16,6 +16,6 @@ public interface UserAccountService {
 	UserAccount update(UserAccount newUserAccount);
 
 	UserAccount delete(String userName);
-	
+
 	List<SimpleGrantedAuthority> getAuthorityByUserId();
 }

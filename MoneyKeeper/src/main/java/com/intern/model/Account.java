@@ -1,9 +1,6 @@
 package com.intern.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "account", schema = "public")
-public class Account implements Serializable {
+public class Account {
 
 	// region -- Fields --
 

@@ -7,7 +7,7 @@ import com.intern.model.Account;
 public interface AccountService {
 
 	List<Account> findAccountLikeName(String name, String owner);
-	
+
 	Account findAccountById(int id);
 
 	Account save(Account newAccount);

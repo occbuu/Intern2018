@@ -17,11 +17,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.intern.config.JwtTokenUtil;
 import com.intern.model.UserAccount;
 import com.intern.req.UserAccountReq;
 import com.intern.rsp.SingleRes;
 import com.intern.service.UserAccountService;
-import com.intern.config.JwtTokenUtil;
 
 @RestController
 @RequestMapping("/user_account")

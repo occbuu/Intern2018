@@ -77,7 +77,7 @@ CREATE TABLE PUBLIC."log"
 	"old_data"					TEXT,
 	"new_data"					TEXT
 );
-/*
+
 DROP TABLE IF EXISTS PUBLIC."budget";
 CREATE TABLE PUBLIC."budget"
 (
@@ -87,26 +87,22 @@ CREATE TABLE PUBLIC."budget"
 	"ini"								FLOAT8,
 	"rmn"								FLOAT8,
 	"date_start"				TIMESTAMP,
-	"repeat"						VARCHAR(30)
+	"repeat"						VARCHAR(30),
+	"status"						VARCHAR(10)		DEFAULT 'active'
 );
 
 DROP TABLE IF EXISTS PUBLIC."budget_trans_detail";
 CREATE TABLE PUBLIC."budget_trans_detail"
 (
-	"id"					serial			PRIMARY KEY		DEFAULT CURRENT_TIMESTAMP,
-	"budget_id"								VARCHAR(40),
-	"transaction_type_id"								INTEGER,
-	"old_data"					TEXT,
-	"new_data"					TEXT
+	"id"											SERIAL			PRIMARY KEY,
+	"budget_id"								INTEGER,
+	"transaction_type_id"			INTEGER
 );
 
 DROP TABLE IF EXISTS PUBLIC."budget_acc_detail";
 CREATE TABLE PUBLIC."budget_acc_detail"
 (
-	"id"					TIMESTAMP			PRIMARY KEY		DEFAULT CURRENT_TIMESTAMP,
-	"budget_id"								VARCHAR(40),
-	"act"								VARCHAR(10),
-	"old_data"					TEXT,
-	"new_data"					TEXT
+	"id"								SERIAL			PRIMARY KEY,
+	"budget_id"					INTEGER,
+	"acc_id"						INTEGER
 );
-*/
