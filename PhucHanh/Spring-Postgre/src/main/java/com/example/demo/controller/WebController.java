@@ -21,7 +21,8 @@ public class WebController {
 		repository.save(new Customer("Hanh", "Nguyen"));
 
 		// save a list of Customers
-		repository.save(Arrays.asList(new Customer("Trang", "Nguyen"), new Customer("Nguyen", "Ho")));
+		repository.save(Arrays.asList(new Customer("Trang", "Nguyen"), new Customer("Nguyen", "Ho"),
+				new Customer("Van", "Tran"), new Customer("Phan", "Van")));
 		return "Done";
 
 	}
@@ -49,7 +50,7 @@ public class WebController {
 	public String fetchDataByLastName(@RequestParam("lastname") String lastName) {
 		String result = "";
 
-		for (Customer cust : repository.findAll()) {
+		for (Customer cust : repository.findByLastName(lastName)) {
 			result += cust.toString() + "<br>";
 
 		}
